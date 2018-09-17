@@ -10,7 +10,6 @@ import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
-import java.lang.Math.*
 
 class ArcSeekBar @JvmOverloads constructor(
         context: Context,
@@ -32,7 +31,7 @@ class ArcSeekBar @JvmOverloads constructor(
             invalidate()
         }
 
-    var progress: Int = a.useOrDefault(0) { getInteger(R.styleable.ArcSeekBar_progress, it) }
+    var progress: Int = a.useOrDefault(0) { getInteger(R.styleable.ArcSeekBar_progressValue, it) }
         set(progress) {
             field = bound(0, progress, maxProgress)
             onProgressChangedListener?.invoke(progress)
